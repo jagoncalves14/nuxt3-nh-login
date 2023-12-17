@@ -1,11 +1,10 @@
 import { createError } from 'h3'
-import { createClient } from '@supabase/supabase-js'
+import { serverSupabaseServiceRole } from '#supabase/server'
 
 export default eventHandler(async (event) => {
-	const config = useRuntimeConfig()
-	const supabase = createClient(config.public.supabase.url, config.private.supabase.SUPABASE_SERVICE_KEY)
+	const client = serverSupabaseServiceRole(event)
 	const body = await readBody(event)
-	const { data, error } = await supabase.auth.admin.deleteUser(body.userId)
+	const { data, error } = await client.auth.admin.deleteUser(body.userId)
 
 	if (error) {
 		throw createError({ statusMessage: error.message })
