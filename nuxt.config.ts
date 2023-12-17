@@ -49,6 +49,16 @@ export default defineNuxtConfig({
 		},
 	},
 
+	runtimeConfig: {
+		private: {
+			SUPABASE_SERVICE_KEY: process.env.SUPABASE_SERVICE_KEY,
+		},
+		public: {
+			SUPABASE_URL: process.env.SUPABASE_URL,
+			SUPABASE_KEY: process.env.SUPABASE_KEY,
+		},
+	},
+
 	app: {
 		head: {
 			viewport: 'width=device-width, initial-scale=1.0',
