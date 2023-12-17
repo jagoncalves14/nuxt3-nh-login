@@ -47,7 +47,12 @@ module.exports = {
 		// Pattern for specifying keyframe names
 		'keyframes-name-pattern': null,
 		// Specify the mode of the class selector
-		'selector-class-pattern': null,
+		'selector-id-pattern': [
+			'^$|[a-z0-9]+(-[a-z0-9]+)*(__nuxt|$)',
+		],
+		'selector-id-pattern': [
+			'^$|[a-z0-9]+(-[a-z0-9]+)*(__nuxt|$)',
+		],
 		// Values of properties that can be inherited are prohibited from being specified as !important
 		'value-no-vendor-prefix': null,
 		// Require or disallow blank lines before rules
