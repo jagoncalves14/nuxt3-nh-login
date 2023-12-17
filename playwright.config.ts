@@ -26,9 +26,4 @@ export default defineConfig({
 		baseURL: `http://localhost:${WEB_SERVER_PORT}`,
 		trace: 'retain-on-failure',
 	},
-	webServer: {
-		command: 'pnpm run build && pnpm run preview',
-		url: `http://localhost:${WEB_SERVER_PORT}`,
-		timeout: 10000,
-	},
 })

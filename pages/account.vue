@@ -34,8 +34,8 @@ async function handleDeleteUser() {
 			body: JSON.stringify({ userId }),
 		})
 
-		if (!response?.ok) {
-			throw response
+		if (!response.ok) {
+			throw new Error(`${response.status} ${response.statusText}`)
 		}
 
 		alert('Your account has been deleted.')
